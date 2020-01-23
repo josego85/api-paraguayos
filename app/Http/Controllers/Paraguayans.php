@@ -16,6 +16,33 @@ class Paraguayans extends Controller
         return $this->create_geo_json($geo_json);
     }
 
+    public function getCountRemoteMode()
+    {
+        $paraguayans = new paraguayansModel();
+
+        $modes = array('Remoto', 'Presencial-Remoto');
+        $count = $paraguayans->getCountMode($modes);
+        return $count;
+    }
+
+    public function getCountPresentialMode()
+    {
+        $paraguayans = new paraguayansModel();
+
+        $modes = array('Presencial', 'Presencial-Remoto');
+        $count = $paraguayans->getCountMode($modes);
+        return $count;
+    }
+
+    public function getCountPresentialRemoteMode()
+    {
+        $paraguayans = new paraguayansModel();
+
+        $modes = array('Presencial-Remoto');
+        $count = $paraguayans->getCountMode($modes);
+        return $count;
+    }
+
     private function create_geo_json($locales)
     {
         $features = array();

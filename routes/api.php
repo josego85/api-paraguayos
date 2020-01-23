@@ -20,4 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['cors']], function () {
     // Routes to which access will be allowed.
     Route::get('/paraguayans','Paraguayans@getParaguayans')->name('getParaguayos');
+    Route::get('/remotemode','Paraguayans@getCountRemoteMode')->name('getCountRemoteMode');
+    Route::get('/presentialmode','Paraguayans@getCountPresentialMode')->name('getCountPresentialMode');
+    Route::get('/presentialremotemode','Paraguayans@getCountPresentialRemoteMode')->name('getCountPresentialRemoteMode');
 });
