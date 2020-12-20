@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Stats as statsModel;
 
 class Stats extends Controller
@@ -12,8 +11,8 @@ class Stats extends Controller
         $paraguayans = new statsModel();
 
         $modes = array('Remoto', 'Presencial-Remoto');
-        $count = $paraguayans->getCountMode($modes);
-        return $count;
+
+        return $paraguayans->getCountMode($modes);
     }
 
     public function getCountPresentialMode()
@@ -21,8 +20,8 @@ class Stats extends Controller
         $paraguayans = new paraguayansModel();
 
         $modes = array('Presencial', 'Presencial-Remoto');
-        $count = $paraguayans->getCountMode($modes);
-        return $count;
+
+        return $paraguayans->getCountMode($modes);
     }
 
     public function getCountPresentialRemoteMode()
@@ -30,7 +29,7 @@ class Stats extends Controller
         $paraguayans = new paraguayansModel();
 
         $modes = array('Presencial-Remoto');
-        $count = $paraguayans->getCountMode($modes);
-        return $count;
+
+        return $paraguayans->getCountMode($modes);
     }
 }

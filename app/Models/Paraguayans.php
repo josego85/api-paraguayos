@@ -27,10 +27,10 @@ class Paraguayans
 
         $result = $query->get();
         $total = DB::select(DB::raw("SELECT FOUND_ROWS() AS total;"))[0];
-        $return = [
-            'total' =>  $total->total,
-            'data'  =>  $result->all()
-        ];
-        return $return;
+
+        return [
+          'total' =>  $total->total,
+          'data'  =>  $result->all()
+      ];
     }
 }

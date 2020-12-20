@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Paraguayans as paraguayansModel;
 
 class Paraguayans extends Controller
 {
-    public function getParaguayans(Request $request)
+    public function getParaguayans()
     {
         $paraguayans = new paraguayansModel();
 
@@ -20,7 +19,7 @@ class Paraguayans extends Controller
     {
         $features = array();
 
-        foreach($locales as $key => $value)
+        foreach($locales as $value)
         {
             $features[] = array(
                 'type' => 'Feature',
@@ -44,7 +43,7 @@ class Paraguayans extends Controller
                     'website' => ($value->website)? $value->website : '-'
                 )
             );
-        };
+        }
 
         $allfeatures = array(
             'type' => 'FeatureCollection', 
